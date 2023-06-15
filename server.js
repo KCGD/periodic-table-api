@@ -28,6 +28,13 @@ function queryParams(params, array = elements) {
 
 }
 
+//kill-server command
+app.get('/kill-server', async (req, res) => {
+    res.end("Recieved kill-server command. Exiting.");
+    console.log("Recieved kill-server command. Exiting.");
+    process.exit(0);
+})
+
 app.get('/', async (req, res) => {
     res.json(queryParams(req.query))
 })
