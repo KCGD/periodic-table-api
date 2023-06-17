@@ -35,6 +35,11 @@ app.get('/kill-server', async (req, res) => {
     process.exit(0);
 })
 
+//test command
+app.get('/test-api', async (req, res) => {
+    res.json({"test": "API IS ALIVE"});
+})
+
 app.get('/', async (req, res) => {
     res.json(queryParams(req.query))
 })
