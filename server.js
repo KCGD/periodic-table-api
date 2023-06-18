@@ -37,7 +37,9 @@ app.get('/kill-server', async (req, res) => {
 
 //test command
 app.get('/test-api', async (req, res) => {
-    res.json({"test": "API IS ALIVE"});
+    res.json({
+        test: 'API IS ALIVE'
+    });
 })
 
 app.get('/', async (req, res) => {
