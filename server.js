@@ -104,6 +104,12 @@ app.get('/spectral/:element', (req, res) => {
     }
 })
 
+//app main
 app.listen(port, async () => {
     console.log(`App listening at localhost:${port}`);
+
+    //if running as fork, send alive message
+    if(process.send) {
+        process.send(`PROCESS_ALIVE`);
+    }
 })
