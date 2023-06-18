@@ -43,7 +43,9 @@ function queryParams(params, array = elements) {
 
 //kill-server command
 app.get('/kill-server', async (req, res) => {
-    res.end("Recieved kill-server command. Exiting.");
+    res.json({
+        message: "API KILLED"
+    })
     console.log("Recieved kill-server command. Exiting.");
     process.exit(0);
 })
