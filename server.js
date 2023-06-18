@@ -14,6 +14,19 @@ Array.prototype.paginate = function (page = 1, limit = this.length) {
     }
 }
 
+
+//default values
+let port = 3000;
+
+
+//process args
+for(let i = 0; i < process.argv.length; i++) {
+    if(process.argv[i].split("=")[0] === "--port") {
+        port = Number(process.argv[i].split("=")[1]);
+    }
+}
+
+
 function queryParams(params, array = elements) {
 
     if (params['filter']) {
@@ -91,6 +104,6 @@ app.get('/spectral/:element', (req, res) => {
     }
 })
 
-app.listen(3000, async () => {
-    console.log("App listening at localhost:3000")
+app.listen(port, async () => {
+    console.log(`App listening at localhost:${port}`);
 })
