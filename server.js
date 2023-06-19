@@ -26,6 +26,9 @@ for(let i = 0; i < process.argv.length; i++) {
     }
 }
 
+//name the process
+process.title = `PtAPI (port ${port})`;
+
 
 function queryParams(params, array = elements) {
 
